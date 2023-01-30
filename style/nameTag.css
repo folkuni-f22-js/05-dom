@@ -1,0 +1,8 @@
+.name-tag-preview {
+	font-size: 140%;
+	margin: 1em;
+	padding: 2em;
+	border: 2px solid gray;
+	border-radius: 1em;
+	text-align: center;
+}
