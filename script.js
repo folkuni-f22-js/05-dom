@@ -6,13 +6,16 @@ let h1 = document.querySelector('h1')
 let button = document.querySelector('button')
 let buttonClicks = document.querySelector('.button-clicks')
 let toggleButton = document.querySelector('#toggle-button')
+let toggleVisibility = document.querySelector('#toggle-visibility')
+let toggleVisibilityText = document.querySelector('#toggle-visibility-text')
 // console.log( 'h1:', h1 )
 
 
 // State
 let state = {
 	clicks: 0,
-	isOn: true
+	isOn: true,
+	isVisible: true
 }
 
 
@@ -31,5 +34,19 @@ toggleButton.addEventListener('click', () => {
 		toggleButton.innerText = 'On'
 	} else {
 		toggleButton.innerText = 'Off'
+	}
+})
+
+toggleVisibility.addEventListener('input', event => {
+	// Uppdatera state
+	const checked = event.target.checked
+	console.log('Checkbox change (input event) -> ', checked)
+	state.isVisible = checked
+
+	// Uppdatera gränssnittet = rendera (UI)
+	if( state.isVisible ) {
+		toggleVisibilityText.classList.remove('invisible')
+	} else {
+		toggleVisibilityText.classList.add('invisible')
 	}
 })
