@@ -2,12 +2,16 @@ console.log('Hello world')
 
 
 // Variables for DOM elements
-let h1 = document.querySelector('h1')
-let button = document.querySelector('button')
-let buttonClicks = document.querySelector('.button-clicks')
-let toggleButton = document.querySelector('#toggle-button')
-let toggleVisibility = document.querySelector('#toggle-visibility')
-let toggleVisibilityText = document.querySelector('#toggle-visibility-text')
+const h1 = document.querySelector('h1')
+const button = document.querySelector('button')
+const buttonClicks = document.querySelector('.button-clicks')
+const toggleButton = document.querySelector('#toggle-button')
+const toggleVisibility = document.querySelector('#toggle-visibility')
+const toggleVisibilityText = document.querySelector('#toggle-visibility-text')
+const textInput = document.querySelector('#text-input')
+const textMessage = document.querySelector('#text-message')
+// Alternativa sätt att plocka ut element: getElementById, getElementsByClassName, getElementsByTagName
+
 // console.log( 'h1:', h1 )
 
 
@@ -49,4 +53,11 @@ toggleVisibility.addEventListener('input', event => {
 	} else {
 		toggleVisibilityText.classList.add('invisible')
 	}
+})
+
+textInput.addEventListener('keydown', event => {
+	console.log('Key down: ', event.key, event.target.value)
+})
+textInput.addEventListener('keyup', event => {
+	console.log('Key up: ', event.key, event.target.value)
 })

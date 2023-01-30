@@ -4,6 +4,8 @@ body {
 
 .framed {
 	border: 1px solid black;
+	margin: 1em 0em;
+	padding: 0.8em 0.4em;
 }
 
 .invisible {
