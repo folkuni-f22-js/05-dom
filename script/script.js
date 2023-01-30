@@ -10,6 +10,9 @@ const toggleVisibility = document.querySelector('#toggle-visibility')
 const toggleVisibilityText = document.querySelector('#toggle-visibility-text')
 const textInput = document.querySelector('#text-input')
 const textMessage = document.querySelector('#text-message')
+const numberList = document.querySelector('#number-list')
+const addNumber = document.querySelector('#add-number')
+const clearNumbers = document.querySelector('#clear-numbers')
 // Alternativa sätt att plocka ut element: getElementById, getElementsByClassName, getElementsByTagName
 
 // console.log( 'h1:', h1 )
@@ -60,4 +63,23 @@ textInput.addEventListener('keydown', event => {
 })
 textInput.addEventListener('keyup', event => {
 	console.log('Key up: ', event.key, event.target.value)
+})
+
+
+addNumber.addEventListener('click', () => {
+	const clicks = state.clicks
+	let element = document.createElement('li')
+	element.innerText = 'Klick: ' + String(clicks)
+
+	let button = document.createElement('button')
+	button.innerText = 'Ta bort'
+	button.addEventListener('click', () => {
+		element.remove()
+	})
+	element.append(button)
+
+	numberList.append(element)
+})
+clearNumbers.addEventListener('click', () => {
+	numberList.innerHTML = ''
 })
