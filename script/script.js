@@ -1,3 +1,5 @@
+import { createRemoveButton } from "./utils.js"
+
 console.log('Hello world')
 
 
@@ -71,15 +73,13 @@ addNumber.addEventListener('click', () => {
 	let element = document.createElement('li')
 	element.innerText = 'Klick: ' + String(clicks)
 
-	let button = document.createElement('button')
-	button.innerText = 'Ta bort'
-	button.addEventListener('click', () => {
-		element.remove()
-	})
-	element.append(button)
+	const button = createRemoveButton(element)
+	element.append( button )
+	// element.append(createRemoveButton(element) )
 
 	numberList.append(element)
 })
 clearNumbers.addEventListener('click', () => {
 	numberList.innerHTML = ''
 })
+
